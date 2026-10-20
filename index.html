@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>mustio.co | coder Mustafa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5FA; --grid:#DCE3EF; --ink:#16233F; --muted:#56637F; --mark:#FFD84D; --line:#C5CFE0; --panel:#FFFFFF;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0F1729; --grid:#1A2540; --ink:#E8EDF8; --muted:#9AA8C6; --line:#2B3856; --panel:#16203A; color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#0F1729; --grid:#1A2540; --ink:#E8EDF8; --muted:#9AA8C6; --line:#2B3856; --panel:#16203A; color-scheme:dark;}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background-color:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:18px;line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;}
+main{max-width:720px;margin:0 auto;padding:56px 22px 72px}
+h1{font-size:clamp(2.6rem,10vw,4.6rem);line-height:1.02;font-weight:800;margin:0 0 20px;letter-spacing:-.02em}
+h1 mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .08em}
+h2{font-size:1.5rem;font-weight:600;margin:64px 0 18px}
+p{max-width:62ch;margin:0 0 16px;color:var(--muted)}
+.lead{font-size:1.2rem;color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+a.btn{display:inline-block;padding:11px 20px;border:2px solid var(--ink);border-radius:6px;color:var(--ink);text-decoration:none;font-weight:600}
+a.btn.main{background:var(--mark);border-color:var(--ink);color:#16233F}
+a:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+a.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.proj{list-style:none;margin:0;padding:0}
+.proj li{border-top:1px solid var(--line);padding:18px 0}
+.proj li:last-child{border-bottom:1px solid var(--line)}
+.proj a{color:var(--ink);font-weight:600;font-size:1.15rem;text-decoration-color:var(--mark);text-decoration-thickness:3px;text-underline-offset:4px}
+.proj p{margin:4px 0 0}
+.log{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.88rem;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;overflow-x:auto;line-height:1.9;white-space:nowrap}
+.log b{color:#B58900;font-weight:600}
+.log span{color:var(--muted)}
+footer{margin-top:64px;color:var(--muted);font-size:.95rem}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:56px}
+.top nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.top a{color:var(--ink);font-weight:600;text-decoration:none}
+.top a:hover{text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:3px;text-underline-offset:4px}
+#tema{font:inherit;font-weight:600;background:none;border:2px solid var(--ink);color:var(--ink);border-radius:6px;padding:4px 12px;cursor:pointer}
+#tema:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.proj small{display:block;margin-top:6px;color:var(--ink);font-weight:600;font-size:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.chips li{border:2px solid var(--ink);border-radius:999px;padding:3px 15px;font-weight:600;font-size:.95rem;background:var(--panel)}
+.chips li.new{background:var(--mark);color:#16233F}
+.goals{list-style:none;margin:0 0 12px;padding:0}
+.goals li{border-top:1px solid var(--line)}
+.goals li:last-child{border-bottom:1px solid var(--line)}
+.goals label{display:flex;gap:14px;align-items:center;padding:14px 0;cursor:pointer;color:var(--ink)}
+.goals input{width:22px;height:22px;accent-color:var(--mark);flex:none}
+.goals input:checked+span{text-decoration:line-through;color:var(--muted)}
+#sayac{font-weight:600;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){a.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <a href="#">mustio.co</a>
+    <nav>
+      <a href="#projeler">Projeler</a>
+      <a href="#beceriler">Beceriler</a>
+      <a href="#iletisim">İletişim</a>
+      <button id="tema" type="button" aria-label="Temayı değiştir">Tema</button>
+    </nav>
+  </div>
+  <h1>Merhaba, ben <mark>Mustafa</mark>.</h1>
+  <p class="lead">coder Mustafa olarak kod yazmayı öğreniyorum ve yaptığım her şeyi burada, GitHub’da paylaşıyorum.</p>
+  <p>Bu site benim ilk projem.</p>
+  <div class="btns">
+    <a class="btn main" href="https://github.com/KULLANICI_ADIN">GitHub profilim</a>
+    <a class="btn" href="#projeler">Projelerim</a>
+  </div>
+
+  <h2>Hakkımda</h2>
+  <p>Kod yazmaya yeni başladım. Küçük projelerle ilerliyorum: önce bir fikir, sonra çalışan bir ilk sürüm, sonra düzeltmeler. Hatalarımdan da burada öğreniyorum.</p>
+
+  <h2 id="projeler">Projelerim</h2>
+  <ul class="proj">
+    <li><a href="https://github.com/KULLANICI_ADIN/ilk-sitem">İlk sitem</a><p>Şu an baktığın sayfa. Kendi kendime öğrenerek sıfırdan yazdım.</p><small>HTML, CSS, JavaScript</small></li>
+    <li><a href="https://github.com/KULLANICI_ADIN/ilk-botum">İlk botum</a><p>Telegram’da komutlara cevap veren basit bir bot.</p><small>Python, Telegram API</small></li>
+    <li><a href="https://github.com/KULLANICI_ADIN">Sıradaki proje</a><p>Fikrin hazır olunca buraya ekle.</p><small>Henüz seçilmedi</small></li>
+  </ul>
+
+  <h2>Öğrenme günlüğüm</h2>
+  <div class="log" role="img" aria-label="Örnek commit geçmişi">
+    <div><b>a3f9c21</b> <span>site yayına alındı</span></div>
+    <div><b>7d1e08b</b> <span>proje listesi eklendi</span></div>
+    <div><b>2c44fa9</b> <span>renkler ve yazı tipi seçildi</span></div>
+    <div><b>e90b3d7</b> <span>ilk commit: index.html</span></div>
+  </div>
+
+  <h2>Hedeflerim</h2>
+  <p id="sayac"></p>
+  <ul class="goals">
+    <li><label><input type="checkbox" id="g1" checked><span>Git ve GitHub’ı öğren</span></label></li>
+    <li><label><input type="checkbox" id="g2"><span>İlk web sitemi yayına al</span></label></li>
+    <li><label><input type="checkbox" id="g3"><span>Telegram botunu çalıştır</span></label></li>
+    <li><label><input type="checkbox" id="g4"><span>JavaScript temellerini bitir</span></label></li>
+  </ul>
+
+  <h2 id="beceriler">Becerilerim</h2>
+  <ul class="chips">
+    <li>HTML</li><li>CSS</li><li>Git</li><li>GitHub</li><li>Python</li><li class="new">JavaScript (öğreniyorum)</li>
+  </ul>
+
+  <h2 id="iletisim">İletişim</h2>
+  <p>Bir fikrin ya da sorun varsa yaz, birlikte bakalım.</p>
+  <div class="btns">
+    <a class="btn main" href="mailto:adin@ornek.com">E-posta gönder</a>
+    <a class="btn" href="https://github.com/KULLANICI_ADIN">GitHub</a>
+  </div>
+
+  <footer>© 2026 mustio.co | coder Mustafa. Yeni şeyler öğrendikçe güncelliyorum.</footer>
+</main>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('tema');
+  try{var s=localStorage.getItem('tema');if(s)root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('tema',next);}catch(e){}
+  });
+  var boxes=document.querySelectorAll('.goals input'),sayac=document.getElementById('sayac'),saved={};
+  try{saved=JSON.parse(localStorage.getItem('hedef')||'{}');}catch(e){}
+  function say(){var n=0;boxes.forEach(function(b){if(b.checked)n++;});sayac.textContent=n+' / '+boxes.length+' hedef tamamlandı. Kutuya dokunarak işaretle.';}
+  boxes.forEach(function(b){
+    if(saved[b.id]!==undefined)b.checked=saved[b.id];
+    b.addEventListener('change',function(){saved[b.id]=b.checked;try{localStorage.setItem('hedef',JSON.stringify(saved));}catch(e){}say();});
+  });
+  say();
+})();
+</script>
+</body>
+</html>
